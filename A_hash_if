@@ -27,10 +27,5 @@
         - jenkins
         - sonarqube
     loop: "{{ tools }}"
-    register: out
- 
-  - name: output task
-    ansible.builtin.debug: 
-      msg: "{{ item.cmd.item}}"
-    loop: "{{ out.results }}"          
+    when: item >= "jenkins"        
   

@@ -1,1 +1,6 @@
 names: ['name1.varfile3', 'name1.varfile2', 'name1.varfile1']
+
+h_names:
+  - { name: 'name1.varfile', group: 'group11.varfile' }
+  - { name: 'name3.varfile', group: 'group3.varfile' }
+  - { name: 'name2.varfile', group: 'group2.varfile' }

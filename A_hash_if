@@ -1,0 +1,17 @@
+- name: hash if loop
+  hosts: all
+  vars_files:
+  - variables.yaml
+  tasks:
+  - name: tassk1
+    ansible.builtin.debug:
+        msg: "This is name-{{ item.name }} & group-{{ item.group }}"
+    vars:           
+      h_names: 
+      - { name: 'name1', group: 'group1' }
+      - { name: 'name3', group: 'group3' }
+      - { name: 'name2', group: 'group2' }
+  - name: tassk2
+    ansible.builtin.debug:
+        msg: "This is name-{{ item.name }} & group-{{ item.group }}"    
+  

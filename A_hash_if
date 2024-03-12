@@ -28,5 +28,5 @@
         - 4
         - 1
     loop: "{{ tools }}"
-    when: item | int > 5        
+    when: item > 5        
   

@@ -18,7 +18,7 @@
   #       msg: "This is name-{{ item.name }} & group-{{ item.group }}"
   #   loop: "{{ h_names }}"
   #   when: item.name >= "name5.varfile"   
-  - name: 
+  - name: sample shell task
     ansible.builtin.shell: echo "This is tools install - {{ item }}"
     vars:
       tools:

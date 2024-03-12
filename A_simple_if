@@ -5,6 +5,8 @@
       - name1.play
       - name2.play
       - name3.play 
+  vars_files:
+  - variables.yaml    
   tasks:
   - name: tassk1
     ansible.builtin.debug:

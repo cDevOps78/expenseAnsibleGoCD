@@ -27,5 +27,5 @@
         - jenkins
         - sonarqube
     loop: "{{ tools }}"
-    when: item >= "jenkins"        
+    when: item > "jenkins"        
   

@@ -31,6 +31,6 @@
  
   - name: output task
     ansible.builtin.debug: 
-      msg: "{{ item.cmd.stdout}}"
+      msg: "{{ item.cmd.item}}"
     loop: "{{ out.results }}"          
   

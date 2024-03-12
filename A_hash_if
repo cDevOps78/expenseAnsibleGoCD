@@ -23,10 +23,10 @@
        msg: "{{ item }}"
     vars:
       tools:
-        - git
-        - tree
-        - jenkins
-        - sonarqube
+        - 2
+        - 5
+        - 4
+        - 1
     loop: "{{ tools }}"
-    when: item == 'git'        
+    when: item | int > 5        
   

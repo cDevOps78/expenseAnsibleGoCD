@@ -26,5 +26,10 @@
         - tree
         - jenkins
         - sonarqube
-    loop: "{{ tools }}"     
+    loop: "{{ tools }}"
+    register: out
+ 
+  - name: output task
+    ansible.builtin.debug: 
+      msg: "{{ out }}"        
   

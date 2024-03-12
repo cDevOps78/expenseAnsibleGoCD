@@ -1,0 +1,32 @@
+format_version: 10
+pipelines:
+  chaitu:
+    group: defaultGroup
+    materials:
+      git-7e255db:
+        git: https://github.com/cDevOps78/learn_ansible.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+    stages:
+    - DEV:
+        fetch_materials: true
+        approval:
+          type: manual
+          allow_only_on_success: false
+        jobs:
+          ls:
+            timeout: 0
+            tasks:
+            - exec:
+                command: ls
+                run_if: passed
+          run: 
+            timeout: 10
+            tasks:
+            - exec: 
+               command: sleep
+               arguments:
+               - 30s
+               run_if: passed    
+              

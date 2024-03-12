@@ -1,5 +1,6 @@
 - name: hash if loop
   hosts: all
+  gather_facts: no
   vars_files:
   - variables.yaml
   tasks:

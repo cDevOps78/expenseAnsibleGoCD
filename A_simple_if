@@ -1,0 +1,9 @@
+- name: simple if loop
+  hosts: localhost
+  tasks:
+  - name: 
+    ansible.builtin.debug:
+        msg: "{{ item }}"
+    vars: ['chaitu1', 'chaitu2', 'chaitu3']
+    loop: 
+    - "{{ vars }}"    

@@ -19,7 +19,8 @@
   #   loop: "{{ h_names }}"
   #   when: item.name >= "name5.varfile"   
   - name: sample shell task
-    ansible.builtin.shell: echo "This is tools install - {{ item }}"
+    ansible.builtin.debug: 
+       msg: "{{ item }}"
     vars:
       tools:
         - git

@@ -3,7 +3,9 @@
   tasks:
   - name: 
     ansible.builtin.debug:
-        msg: "{{ item }}"
-    vars: ['chaitu1', 'chaitu2', 'chaitu3']
-    loop: 
-    - "{{ vars }}"    
+        msg: "{{ name }}"
+    vars:
+      - name1
+      - name2
+      - name3
+    loop: "{{ vars }}"    

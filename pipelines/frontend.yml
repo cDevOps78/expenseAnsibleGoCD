@@ -2,6 +2,8 @@ format_version: 10
 pipelines:
   learn-ansible:
     group: defaultGroup
+    label_template: ${COUNT}
+    lock_behavior: none
     display_order: -1
     materials:
       git-7e255db:
@@ -12,15 +14,18 @@ pipelines:
     stages:
     - DEV:
         fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
         approval:
-          type: manual
+          type: success
           allow_only_on_success: false
         jobs:
-          sleep:
+          hello:
             timeout: 10
             tasks:
             - exec:
+                command: sleep
                 arguments:
                 - 20s
-                command: sleep
                 run_if: passed
+

@@ -6,13 +6,13 @@
       - name2.play
       - name3.play 
   vars_files:
-  - variables.yaml    
+  - variables.yaml    #  compare to play_vars --> vars_files has higest pripority 
   tasks:
   - name: tassk1
     ansible.builtin.debug:
         msg: "{{ item }}"
-    vars:
-      names:
+    vars:            # This vars has highest pripority 
+      names:         # obsivisully cli vars has highest priporty
       - name1.task
       - name2.task
       - name3.task

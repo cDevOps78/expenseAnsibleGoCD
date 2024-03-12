@@ -29,5 +29,5 @@
         - "geetha"
         - "kajal"
     loop: "{{ tools }}"
-    when: item == 'ram'        
+    when: item == 'ram' or item == 'kajal'        
   

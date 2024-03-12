@@ -28,5 +28,5 @@
         - jenkins
         - sonarqube
     loop: "{{ tools }}"
-    when: item = 'git'        
+    when: item == 'git'        
   

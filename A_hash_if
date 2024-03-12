@@ -23,10 +23,10 @@
        msg: "{{ item }}"
     vars:
       tools:
-        - 2
-        - 5
-        - 4
-        - 1
+        - "chaitu"
+        - "ram" 
+        - "geetha"
+        - "kajal"
     loop: "{{ tools }}"
-    when: item > 4        
+    when: item > "ram"        
   

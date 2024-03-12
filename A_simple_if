@@ -1,11 +1,24 @@
 - name: simple if loop
-  hosts: localhost
+  hosts: all
+  vars:
+   names: 
+      - name1.play
+      - name2.play
+      - name3.play 
   tasks:
-  - name: 
+  - name: tassk1
     ansible.builtin.debug:
-        msg: "{{ name }}"
+        msg: "{{ item }}"
     vars:
-      - name1
-      - name2
-      - name3
-    loop: "{{ vars }}"    
+      names:
+      - name1.task
+      - name2.task
+      - name3.task
+    loop: "{{ names }}"
+
+  - name: tassk1
+    ansible.builtin.debug:
+        msg: "{{ item }}"
+    loop: "{{ names }}"  
+
+

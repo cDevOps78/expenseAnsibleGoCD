@@ -28,4 +28,11 @@ pipelines:
                 arguments:
                 - 20s
                 run_if: passed
+          echo:
+            tasks:
+            - exec:
+               command: echo 
+               arguments:
+               - "This is chaithanya"
+                     
 

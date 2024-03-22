@@ -21,7 +21,7 @@
 
 - name: Download the application code to /tmp dir
   ansible.builtin.get_url:
-    src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+    url: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
     dest: /tmp/backend.zip
 
 - name: unzip application code to created app directory

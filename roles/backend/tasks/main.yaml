@@ -7,7 +7,7 @@
 - name: To install nodejs:20
   ansible.builtin.dnf:
     name: nodejs
-    state: Installed
+    state: installed
 
 - name: To add user for project requirements
   ansible.builtin.user:
@@ -54,12 +54,12 @@
 
 - name: Load Schema
   community.mysql.mysql_db:
-        state: import
-        name: all
-        target: /app/schema/backend.sql
-        login_user: root
-        login_password: ExpenseApp@1
-        login_host: "{{ mysqlServerIP }}"
+    state: import
+    name: all
+    target: /app/schema/backend.sql
+    login_user: root
+    login_password: ExpenseApp@1
+    login_host: "{{ mysqlServerIP }}"
 
 - name: To start backend service
   ansible.builtin.systemd_service:

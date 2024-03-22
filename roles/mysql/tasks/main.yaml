@@ -1,7 +1,7 @@
 - name: Install Mysql
   ansible.builtin.dnf:
     name: mysql-server
-    state: Installed
+    state: installed
 
 - name: To start Mysql
   ansible.builtin.systemd_service:

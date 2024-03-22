@@ -1,1 +1,31 @@
-- name:
+- name: To install nginx
+  ansible.builtin.dnf:
+    name: nginx
+    state: installed
+
+- name: Remove default nginx content
+  ansible.builtin.file:
+    name: /usr/share/nginx/html/
+    state: absent
+
+- name: Create directory
+  ansible.builtin.file:
+    name: /usr/share/nginx/html/
+    state: directory
+
+- name: To download frontend content
+  ansible.builtin.unarchive:
+    src: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
+    dest: /usr/share/nginx/html/
+    remote_src: true
+
+- name: Create Nginx Reverse Proxy Configuration
+  ansible.builtin.template:
+    src: expense.conf
+    dest: /etc/nginx/default.d/expense.conf
+
+- name: To start nginx service
+  ansible.builtin.systemd_service:
+    name: nginx
+    state: restarted
+    enabled: true

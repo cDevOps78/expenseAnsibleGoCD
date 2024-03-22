@@ -1,5 +1,5 @@
 - name: To backend app
-  hosts: alL
+  hosts: all
   become: true
   tasks:
     - name: To disable default nodejs:16 module

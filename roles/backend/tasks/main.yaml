@@ -1,63 +1,59 @@
-- name: To backend app
-  hosts: all
-  become: true
-  tasks:
-    - name: To disable default nodejs:16 module
-      ansible.builtin.shell: dnf module disable nodejs -y
+- name: To disable default nodejs:16 module
+  ansible.builtin.shell: dnf module disable nodejs -y
 
-    - name: To enable nodejs:20 module
-      ansible.builtin.shell: dnf module enable nodejs:20 -y
+- name: To enable nodejs:20 module
+  ansible.builtin.shell: dnf module enable nodejs:20 -y
 
-    - name: To install nodejs:20
-      ansible.builtin.dnf:
-        name: nodejs
-        state: Installed
+- name: To install nodejs:20
+  ansible.builtin.dnf:
+    name: nodejs
+    state: Installed
 
-    - name: To add user for project requirements
-      ansible.builtin.user:
-        name: expense
-        state: present
+- name: To add user for project requirements
+  ansible.builtin.user:
+    name: expense
+    state: present
 
-    - name: To create app directory
-      ansible.builtin.file:
-        name: /app
-        state: directory
+- name: To create app directory
+  ansible.builtin.file:
+    name: /app
+    state: directory
 
-    - name: Download the application code to /tmp dir
-      ansible.builtin.get_url:
-        src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
-        dest: /tmp/backend.zip
+- name: Download the application code to /tmp dir
+  ansible.builtin.get_url:
+    src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+    dest: /tmp/backend.zip
 
-    - name: unzip application code to created app directory
-      ansible.builtin.unarchive:
-        src: /tmp/backend.zip
-        dest: /app
-        remote_src: yes
+- name: unzip application code to created app directory
+  ansible.builtin.unarchive:
+    src: /tmp/backend.zip
+    dest: /app
+    remote_src: yes
 
-    - name: Install packages based on package.json using the npm
-      npm:
-        path: /app
-        state: present
+- name: Install packages based on package.json using the npm
+  npm:
+    path: /app
+    state: present
 
-    - name: copy backend.service file
-      ansible.builtin.template:
-        src: backend.service
-        dest: /etc/systemd/system/backend.service
+- name: copy backend.service file
+  ansible.builtin.template:
+    src: backend.service
+    dest: /etc/systemd/system/backend.service
 
-    - name: Install Python MySQL Client
-      ansible.builtin.pip:
-        name:
-          - PyMySQL
-          - cryptography
-        executable: pip3.9
-#
-#    - name: Install MySQL Client
-#      ansible.builtin.dnf:
-#        name: mysql
-#        state: installed
+- name: Install Python MySQL Client
+  ansible.builtin.pip:
+    name:
+        - PyMySQL
+         - cryptography
+    executable: pip3.9
 
-    - name: Load Schema
-      community.mysql.mysql_db:
+#- name: Install MySQL Client
+#  ansible.builtin.dnf:
+#    name: mysql
+#    state: installed
+
+- name: Load Schema
+  community.mysql.mysql_db:
         state: import
         name: all
         target: /app/schema/backend.sql
@@ -65,10 +61,10 @@
         login_password: ExpenseApp@1
         login_host: "{{ mysqlServerIP }}"
 
-    - name: To start backend service
-      ansible.builtin.systemd_service:
-        name: backend
-        state: restarted
-        deamon_reload: true
-        enabled: true
+- name: To start backend service
+  ansible.builtin.systemd_service:
+    name: backend
+    state: restarted
+    deamon_reload: true
+    enabled: true
 

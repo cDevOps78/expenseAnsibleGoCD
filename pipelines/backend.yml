@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   backend:
-    group: defaultGroup
+    group: ansibleGroup
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1

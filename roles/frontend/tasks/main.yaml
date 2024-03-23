@@ -1,4 +1,5 @@
 # Note check vars/main.yaml update with backend-server address
+
 - name: To install nginx
   ansible.builtin.dnf:
     name: nginx

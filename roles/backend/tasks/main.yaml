@@ -65,6 +65,8 @@
     login_user: root
     login_password: ExpenseApp@1
     login_host: "{{ mysqlServerIP }}"
+  vars:
+    mysqlServerIP: "${{ role_name }}-dev.chaithanya.online"
 
 - name: To start backend service
   ansible.builtin.systemd_service:

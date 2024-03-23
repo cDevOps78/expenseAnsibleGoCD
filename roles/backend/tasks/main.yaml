@@ -1,3 +1,5 @@
+# Note check vars/main.yaml update with mysql-server address
+
 - name: To disable default nodejs:16 module
   ansible.builtin.shell: dnf module disable nodejs -y
 

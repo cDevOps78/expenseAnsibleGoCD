@@ -1,1 +1,1 @@
-mysqlServerIP: "mysql-dev.chaithanya.online"
+mysqlServerIP: "mysql-{{ env }}.chaithanya.online"

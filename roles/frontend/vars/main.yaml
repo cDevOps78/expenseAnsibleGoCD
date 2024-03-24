@@ -1,1 +1,1 @@
-backendServerIP: "backend-dev.chaithanya.online"
+backendServerIP: "backend-{{ env }}.chaithanya.online"

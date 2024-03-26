@@ -12,6 +12,7 @@
 - name: To check weather mysql root password set
   ansible.builtin.shell: echo 'show databases' |  mysql -h {{ mysqlServerIP }} -uroot -pExpenseApp@1
   register: check
+  ignore_errors: yes
 
 - name: To set Mysql Root Password
   ansible.builtin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1

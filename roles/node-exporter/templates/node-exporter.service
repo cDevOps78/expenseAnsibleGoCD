@@ -1,0 +1,9 @@
+[Unit]
+Description=prometheus
+
+[Service]
+WorkingDirectory=/opt/node_exporter-{{ version }}.linux-amd64
+ExecStart=/opt/node_exporter-{{ version }}.linux-amd64/node_exporter
+
+[Install]
+WantedBy=multi-user.target

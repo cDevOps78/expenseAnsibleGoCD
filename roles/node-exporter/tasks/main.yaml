@@ -2,6 +2,7 @@
   ansible.builtin.unarchive:
     src: https://github.com/prometheus/node_exporter/releases/download/{{ version }}/node_exporter-{{ version }}.linux-amd64.tar.gz
     dest: /opt
+    remote_src: yes
 
 - name: To copy node-exporter service file
   ansible.builtin.template:

@@ -35,5 +35,4 @@
 - name: To Import newrelic role
   ansible.builtin.import_role:
      name: newrelic
-     tasks_form: nginx-newrelic
-
+     tasks_form: nginx

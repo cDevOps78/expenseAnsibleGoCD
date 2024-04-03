@@ -25,6 +25,10 @@
   ansible.builtin.file:
     name: /app
     state: directory
+    owner: expense
+    group: expense
+    recurse: yes
+
 
 - name: Download the application code to /tmp dir
   ansible.builtin.get_url:
@@ -67,6 +71,11 @@
     login_user: root
     login_password: ExpenseApp@1
     login_host: "{{ mysqlServerIP }}"
+
+- name: To import backend nodejs role
+  ansible.builtin.import_role:
+    name: newrelic
+    tasks_from: backend-newrelic
 
 - name: To start backend service
   ansible.builtin.systemd_service:

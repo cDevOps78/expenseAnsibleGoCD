@@ -10,3 +10,4 @@ ansible-playbook -i ${component}-${env}.chaithanya.online, -e ansible_user=ec2-u
 
 #-frontend-#
 # ansible-pull -i localhost, -U https://github.com/cDevOps78/expenseAnsibleGoCD -e env=dev -e role_name=frontend -e component=frontend rolecall.yaml
+#

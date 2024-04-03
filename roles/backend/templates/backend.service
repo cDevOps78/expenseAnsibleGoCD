@@ -5,7 +5,7 @@ Description = Backend Service
 User=expense
 WorkingDirectory=/app
 Environment=DB_HOST={{ mysqlServerIP }}
-Environment=NEW_RELIC_APP_NAME=backend NEW_RELIC_LICENSE_KEY={{ sudo  }}
+Environment=NEW_RELIC_APP_NAME=backend NEW_RELIC_LICENSE_KEY={{ NEW_RELIC_BACKEND  }}
 ExecStart=/bin/node -r newrelic /app/index.js
 SyslogIdentifier=backend
 

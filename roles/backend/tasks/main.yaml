@@ -25,9 +25,6 @@
   ansible.builtin.file:
     name: /app
     state: directory
-    owner: expense
-    group: expense
-    recurse: yes
 
 
 - name: Download the application code to /tmp dir
@@ -39,9 +36,7 @@
   ansible.builtin.unarchive:
     src: /tmp/backend.zip
     dest: /app
-    owner: expense
-    group: expense
-    remote_src: yes
+
 
 - name: Install packages based on package.json using the npm
   npm:
@@ -78,6 +73,15 @@
   ansible.builtin.import_role:
     name: newrelic
     tasks_from: backend-newrelic
+
+- name: To change ownership of directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+    owner: expense
+    group: expense
+    recurse: yes
+
 
 - name: To start backend service
   ansible.builtin.systemd_service:

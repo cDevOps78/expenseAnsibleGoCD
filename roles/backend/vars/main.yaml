@@ -1,1 +1,1 @@
-mysqlServerIP: "mysql-{{ env }}.chaithanya.online"
+mysqlServerIP: "mysql-{{ env }}.azcart.online"

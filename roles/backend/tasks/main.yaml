@@ -65,7 +65,7 @@
     state: import
     name: all
     target: /app/schema/backend.sql
-    login_user: {{ mysql_login_user }}
+    login_user: "{{ mysql_login_user }}"
     login_password: "{{ mysql_login_password }}"
     login_host: "{{ mysqlServerIP }}"
 

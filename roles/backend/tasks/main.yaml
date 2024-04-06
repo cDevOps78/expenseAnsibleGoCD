@@ -36,7 +36,7 @@
   ansible.builtin.unarchive:
     src: /tmp/backend.zip
     dest: /app
-  remote_src: true
+    remote_src: yes
 
 
 - name: Install packages based on package.json using the npm

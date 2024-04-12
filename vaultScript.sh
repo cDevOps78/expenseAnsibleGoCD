@@ -1,0 +1,2 @@
+
+env | tee /tmp/vaultSecrets

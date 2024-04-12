@@ -14,7 +14,8 @@ pipelines:
     stages:
       - DEV:
           environment_variables:
-            env: dev
+            env: "dev"
+            Name: "CHAITHANYA"
           secure_variables:
             vault_token: "AES:/jvkC1Lso4gftkDu9XOmEg==:N8TCA8tmeOrSSuPA10zqTTvLhGmOI+Ut6sCe4jBH6BQ="
           fetch_materials: true

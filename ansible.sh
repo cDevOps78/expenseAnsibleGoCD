@@ -4,7 +4,7 @@ component=$1
 ansible-playbook  -e env=${env} -e component=${component} -e vault_token=${vault_token} get-vault-secrets.yaml
 
 
-ansible-playbook -i ${component}-${env}.azcart.online, -e "@~/common-secrets.json" -e "@~/${component}-secrets.json" -e env=${env} -e component=${component} -e role_name=${component} rolecall.yaml
+ansible-playbook -i ${component}-${env}.azcart.online, -e '@~/common-secrets.json' -e '@~/${component}-secrets.json' -e env=${env} -e component=${component} -e role_name=${component} rolecall.yaml
 
 # rm -rf common-secrets.json ${component}-secrets.json
 

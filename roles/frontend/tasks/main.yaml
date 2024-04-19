@@ -32,8 +32,8 @@
     state: restarted
     enabled: true
 
-- name: To Import newrelic role
-  ansible.builtin.import_role:
-     name: newrelic
-     tasks_from: nginx
+#- name: To Import newrelic role
+#  ansible.builtin.import_role:
+#     name: newrelic
+#     tasks_from: nginx
 

@@ -70,10 +70,10 @@
     login_password: "{{ mysql_login_password }}"
     login_host: "{{ mysqlServerIP }}"
 
-- name: To import backend nodejs role
-  ansible.builtin.import_role:
-    name: newrelic
-    tasks_from: backend-newrelic
+#- name: To import backend nodejs role
+#  ansible.builtin.import_role:
+#    name: newrelic
+#    tasks_from: backend-newrelic
 
 - name: To change ownership of directory
   ansible.builtin.file:

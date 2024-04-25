@@ -16,7 +16,7 @@ pipelines:
           environment_variables:
             env: "dev"
             Name: "CHAITHANYA"
-            RRR: `${ENV_Name}`
+            RRR: `${Name}`
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: false

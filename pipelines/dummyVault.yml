@@ -16,7 +16,6 @@ pipelines:
           environment_variables:
             env: "dev"
             Name: "CHAITHANYA"
-          secure_variables:
             RRR: `ENV_Name`
           fetch_materials: true
           keep_artifacts: false

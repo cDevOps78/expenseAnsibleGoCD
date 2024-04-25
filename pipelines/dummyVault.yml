@@ -29,3 +29,4 @@ pipelines:
               timeout: 0
               tasks:
                 - exec: {command: bash, arguments: ['vaultScript.sh'], run_if: passed}
+#

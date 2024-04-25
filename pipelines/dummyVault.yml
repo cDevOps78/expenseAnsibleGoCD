@@ -17,7 +17,7 @@ pipelines:
             env: "dev"
             Name: "CHAITHANYA"
           secure_variables:
-            vault_token: "AES:/jvkC1Lso4gftkDu9XOmEg==:N8TCA8tmeOrSSuPA10zqTTvLhGmOI+Ut6sCe4jBH6BQ="
+            RRR: `ENV_Name`
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: false
@@ -28,4 +28,4 @@ pipelines:
             job1:
               timeout: 0
               tasks:
-                - exec: {command: bash, arguments: ['vaultScript.sh', 'backend'], run_if: passed}
+                - exec: {command: bash, arguments: ['vaultScript.sh'], run_if: passed}

@@ -13,10 +13,11 @@ pipelines:
         branch: main
     stages:
       - DEV:
+          secure_variables:
+            SSH_PASSWORD: "AES:C0uIVn+cYBjLM2QV+H6agg==:vng1ida0sGt4+P1Fc0NUHg=="
           environment_variables:
             env: "dev"
             Name: "CHAITHANYA"
-            RRR: ${ENV.Name}
           fetch_materials: true
           keep_artifacts: false
           clean_workspace: false

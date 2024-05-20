@@ -32,7 +32,7 @@ pipelines:
                 - exec:
                     command: bash
                     arguments:
-                        - env
+                        - "env | tee /tmp/file1"
                     run_if: passed
 
 

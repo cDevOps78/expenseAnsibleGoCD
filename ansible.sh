@@ -1,6 +1,6 @@
 
 echo "This is $component"
-
+echo "This is $dev"
 exit 0
 #component=$1
 # we are passing ${env} variable  value from gocd pipelines.
